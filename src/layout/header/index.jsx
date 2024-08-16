@@ -18,9 +18,9 @@ const Header = () => {
             </div>
             <header className='w-full py-4 border-b-[1px]'>
                 <nav className='w-[1240px] mx-auto flex items-center justify-between'>
-                    <figure className='w-[120px] h-[18px]'>
+                    <Link to={'/'} className='w-[120px] h-[18px]'>
                         <img className='w-full h-full' src={logo} alt="" />
-                    </figure>
+                    </Link>
                     <div className="flex items-center justify-center gap-4">
                         <select name="" id="" className='border-0'>
                             <option value="shop">Shop</option>

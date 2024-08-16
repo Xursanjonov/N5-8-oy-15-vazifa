@@ -23,9 +23,9 @@ const Home = () => {
                     <img src={img5} alt="" />
                 </div>
             </div>
-            <ProductWrapper title="NEW ARRIVALS" products={PRODUCTS} />
+            <ProductWrapper btn={true} title="NEW ARRIVALS" products={PRODUCTS} />
             <p className='max-w-[1240px] w-full mx-auto h-[2px] bg-[#0000001A]'></p>
-            <ProductWrapper title="TOP SELLING" star={4} end={8} products={PRODUCTS} />
+            <ProductWrapper btn={true} title="TOP SELLING" star={4} end={8} products={PRODUCTS} />
             <CommentWrapper />
         </section>
     )

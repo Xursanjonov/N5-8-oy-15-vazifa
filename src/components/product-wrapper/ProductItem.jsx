@@ -2,6 +2,7 @@ import React, { memo } from 'react'
 import ShopIcon from '../../assets/icons/ShopIcon'
 import LikeIcon from '../../assets/icons/LikeIcon'
 import { ratingTotal } from '../../static/CustemsFuction'
+import { Link } from 'react-router-dom'
 
 const ProductItem = ({ product }) => {
     const aksiya = ((product?.oldPrice - product?.price) * 100) / product?.oldPrice
@@ -17,7 +18,7 @@ const ProductItem = ({ product }) => {
                 </div>
             </figure>
             <div className="w-full flex flex-col gap-3">
-                <h5 className='text-[20px] font-semibold'>{product?.title}</h5>
+                <Link to={`/products/${product?.id}`} className='text-[20px] font-semibold'>{product?.title}</Link>
                 <p className='flex items-center justify-start gap-4'>{ratingTotal(product?.rating)}
                     <span className='text-sm text-gray-500'>{product?.rating}/{product?.reviews}</span>
                 </p>

@@ -2,8 +2,8 @@ import React, { memo } from 'react'
 import ProductItem from './ProductItem'
 import { useNavigate } from 'react-router-dom'
 
-const ProductsWrapper = ({ products, star, end, title, link }) => {
-    const navigation = useNavigate()
+const ProductsWrapper = ({ products, star, end, title, link, btn }) => {
+    const navigate = useNavigate()
 
     return (
         <div className='w-full my-16 mx-auto flex flex-col gap-14'>
@@ -13,7 +13,10 @@ const ProductsWrapper = ({ products, star, end, title, link }) => {
                     products?.slice(star ?? 0, end ?? 4)?.map(product => <ProductItem key={product?.id} product={product} />)
                 }
             </div>
-            <button onClick={() => navigation(link ?? '/products')} className='w-48 px-4 py-2 mx-auto text-md font-semibold rounded-3xl border-[1px]'>View All</button>
+            <button onClick={() => navigate(link ?? '/products')}
+                className={`w-48 ${btn ?? 'hidden'} px-4 py-2 mx-auto text-md font-semibold rounded-3xl border-[1px]`}>
+                View All
+            </button>
         </div>
     )
 }
