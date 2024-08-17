@@ -1,11 +1,13 @@
 import React, { memo } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import { CloseOutlined, SearchOutlined } from '@ant-design/icons'
 import logo from '../../assets/icons/logo.png'
-import { Link } from 'react-router-dom'
 import ShopIcon from '../../assets/icons/ShopIcon'
 import UserIcon from '../../assets/icons/UserIcon'
+import LikeIcon from '../../assets/icons/LikeIcon'
 
 const Header = () => {
+    const navigate = useNavigate()
 
     return (
         <div className='max-w-[1920px] w-full mx-auto bg-white'>
@@ -37,8 +39,9 @@ const Header = () => {
                             type="search" placeholder='Search for products...' />
                     </label>
                     <div className="flex items-center justify-center gap-5">
-                        <button className='border-0'> <ShopIcon /> </button>
-                        <button className='border-0'> <UserIcon /> </button>
+                        <button onClick={() => navigate('/wish-list')} className='border-0'> <LikeIcon /> </button>
+                        <button onClick={() => navigate('/cart')} className='border-0'> <ShopIcon /> </button>
+                        <button onClick={() => navigate('/login')} className='border-0'> <UserIcon /> </button>
                     </div>
                 </nav>
             </header>
